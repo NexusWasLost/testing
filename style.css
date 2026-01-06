@@ -47,8 +47,6 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    /* Removed redundant slideUp in favor of a clean container entry if needed,
-       but letting the children (pfp, intro, links) handle the reveal looks better */
 }
 
 /* Profile Section */
@@ -69,7 +67,6 @@ main {
     user-select: none;
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 4px;
-    /* Adding reveal to pfp */
     opacity: 0;
     animation: linkReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: 0.1s;
@@ -82,11 +79,27 @@ main {
 .intro {
     font-family: "Roboto", system-ui, -apple-system, sans-serif;
     font-size: 1.5rem;
+    text-align: center;
     font-weight: 600;
     letter-spacing: -0.02em;
     color: var(--text-main);
     /* Reveal */
     opacity: 0;
+    animation: linkReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+.badge {
+    font-family: "Roboto", system-ui, -apple-system, sans-serif;
+    font-size: 0.8rem;
+    display: block;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 0 0 0 3px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    user-select: none;
     animation: linkReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: 0.2s;
 }
